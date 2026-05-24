@@ -192,16 +192,17 @@ These technologies would allow DriveWise to provide modern, immersive, and inter
 
 # 🏗️ Tech Stack
 
-| Layer          | Technology       |
-| -------------- | ---------------- |
-| Frontend       | Next.js + React  |
-| Styling        | Tailwind CSS     |
-| Backend        | FastAPI          |
-| Database       | PostgreSQL       |
-| AI Integration | OpenAI API       |
-| Vector Search  | pgvector         |
-| Authentication | Clerk/Auth0      |
-| Hosting        | Vercel + Railway |
+| Layer          | Technology                              |
+| -------------- | --------------------------------------- |
+| Frontend       | Next.js 15 + React 19 (TypeScript)      |
+| Styling        | Tailwind CSS                            |
+| Backend        | NestJS (Node.js + TypeScript)           |
+| ORM            | Drizzle ORM (or Prisma)                 |
+| Database       | PostgreSQL                              |
+| Vector Search  | pgvector                                |
+| AI Integration | OpenAI SDK + Vercel AI SDK              |
+| Authentication | Clerk                                   |
+| Hosting        | Vercel (web) + Railway/Render (API) + Neon/Supabase (DB) |
 
 ---
 
