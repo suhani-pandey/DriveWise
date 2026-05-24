@@ -1,0 +1,19 @@
+{
+  "name": "drivewise",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DriveWise — AI-powered vehicle recommendation platform (monorepo)",
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "deps:check": "pnpm -r deps:check",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
