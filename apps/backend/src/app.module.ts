@@ -1,12 +1,14 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
+import { APP_FILTER } from '@nestjs/core';
 
 import { configuration } from './config/configuration';
-
-// Feature modules will be registered here as they're built, e.g.:
-// import { VehiclesModule } from './modules/vehicles/vehicles.module';
-// import { ComparisonModule } from './modules/comparison/comparison.module';
-// import { RecommendationModule } from './modules/recommendation/recommendation.module';
+import { ComparisonModule } from './modules/comparison/comparison.module';
+import { OwnershipCostModule } from './modules/ownership-cost/ownership-cost.module';
+import { RecommendationModule } from './modules/recommendation/recommendation.module';
+import { SavedVehiclesModule } from './modules/saved-vehicles/saved-vehicles.module';
+import { VehiclesModule } from './modules/vehicles/vehicles.module';
+import { AppErrorFilter } from './shared/errors/app-error.filter';
 
 @Module({
   imports: [
@@ -14,9 +16,12 @@ import { configuration } from './config/configuration';
       isGlobal: true,
       load: [configuration],
     }),
-    // VehiclesModule,
-    // ComparisonModule,
-    // RecommendationModule,
+    VehiclesModule,
+    ComparisonModule,
+    OwnershipCostModule,
+    RecommendationModule,
+    SavedVehiclesModule,
   ],
+  providers: [{ provide: APP_FILTER, useClass: AppErrorFilter }],
 })
 export class AppModule {}
